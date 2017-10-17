@@ -10,5 +10,22 @@
   <%= @city.country_code %>
 </p>
 
+<p>
+  <strong>Minumum tempereture</strong>
+  <%= @temp_min - 273.15 %> &deg;C
+</p>
+<p>
+  <strong>Maximum tempereture</strong>
+  <%= @temp_max - 273.15 %> &deg;C
+</p>
+<p>
+  <strong>Pressure</strong>
+  <%= @pressure %> hpa
+</p>
+<p>
+  <strong>Humidity</strong>
+  <%= @humidity %>%
+</p>
+
 <%= link_to 'Edit', edit_city_path(@city) %> |
 <%= link_to 'Back', cities_path %>
