@@ -12,8 +12,8 @@ class CitiesController < ApplicationController
   def show
     response = HTTParty.get('http://api.openweathermap.org/data/2.5/weather?q=Melbourne,au&appid=6b7691d7c9453c238ec6a2863c1e5699')
     @data = response.body
-    @temp_min = response['main']['temp_min']
-    @temp_max = response['main']['temp_max']
+    @temp_min = response['main']['temp_min'] - 273.15
+    @temp_max = response['main']['temp_max'] - 273.15
     @pressure = response['main']['pressure']
     @humidity = response['main']['humidity']
   end

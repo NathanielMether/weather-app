@@ -12,11 +12,11 @@
 
 <p>
   <strong>Minumum tempereture</strong>
-  <%= @temp_min - 273.15 %> &deg;C
+  <%= format_celcius(@temp_min) %>
 </p>
 <p>
   <strong>Maximum tempereture</strong>
-  <%= @temp_max - 273.15 %> &deg;C
+  <%= format_celcius(@temp_max) %>
 </p>
 <p>
   <strong>Pressure</strong>
