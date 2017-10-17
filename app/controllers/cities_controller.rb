@@ -10,7 +10,10 @@ class CitiesController < ApplicationController
   # GET /cities/1
   # GET /cities/1.json
   def show
-    response = HTTParty.get('http://api.openweathermap.org/data/2.5/weather?q=Melbourne,au&appid=6b7691d7c9453c238ec6a2863c1e5699')
+    api_id = ENV.fetch('API_ID')
+    city_name = @city.name
+    country_code = @city.country_code
+    response = HTTParty.get("http://api.openweathermap.org/data/2.5/weather?q=#{city_name},#{country_code}&appid=#{api_id}")
     @data = response.body
     @temp_min = response['main']['temp_min'] - 273.15
     @temp_max = response['main']['temp_max'] - 273.15
